@@ -1,0 +1,43 @@
+:root {
+  /* 高度宽度 */
+  /* 底部菜单高度 */
+  --NAV_H: 1.3rem;
+  /* 头部内容高度 */
+  --HEADER_H: 1.55rem;
+  /* 仅仅到头部的高度 */
+  --HEADER_H_S: 0.86rem;
+  --auto_h: 1rem;
+  --auto_padding_l_r: 0.15rem;
+  --auto_padding_t_b: 0.15rem;
+
+
+  /* 字体大小设置 */
+  /* 登录框input框文字大小 */
+  --f_auto_s: 0.32rem;
+  /* 登录按钮文字以及头部title文字大小 */
+  --f_auto_l: 0.34rem;
+
+  /* 底部菜单按钮下的文字 */
+  --f_small_s: 0.2rem;
+  /*  */
+  --f_small_x: 0.24rem;
+  /* 歌单描述信息的文字大小 */
+  --f_small_m: 0.26rem;
+  /* mine 中的 tip 用户名字大小 */
+  --f_small_l: 0.28rem;
+  /* 搜索框中的文字大小 */
+  --f_search: 0.42rem;
+
+  /* 字体样式设置 */
+  /* 文本 */
+  --f_text: monosapce;
+  /* 颜色 */
+  --primary_color: rgb(219, 62, 53);
+  
+  /* 白色图标？ */
+  --icon_f: #ccc;
+  /*  */
+  --text_noactive: #e1e1e1;
+
+  --icon_color_nav: #c1c1c1;
+}
