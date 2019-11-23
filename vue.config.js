@@ -24,7 +24,16 @@ module.exports = {
     loaderOptions: {}
   },
   devServer: {
-    proxy: '',
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
     port: '8080'
   },
   chainWebpack: (config) => {
