@@ -145,10 +145,10 @@ export default {
   content: '';
   position: absolute;
   top: 0;
-  bottom: 25%;
+  bottom: 66%;
   right: 0;
   left: 0;
-  background: var(--primary-color);
+  background: var(--primary_color);
 }
 .recommend .scroll-content .sider .main-sider .swiper-slide{
   padding: 0.15rem;
@@ -157,6 +157,6 @@ export default {
 .recommend .scroll-content .sider .main-sider .swiper-slide img{
   display: block;
   width: 100%;
-  border-radius: 0.15rem;
+  border-radius: 0.2rem;
 }
 </style>
