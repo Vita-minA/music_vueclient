@@ -10,13 +10,19 @@
       <!-- <i :class="item.icon"></i> -->
 
       <svg-icon :icon-class="item.icon"></svg-icon>
-
       <span>{{item.name}}</span>
     </router-link>
-
+    <!-- 实现 ios 模糊 -->
+    <div class="wrapper"
+         ref="wrapper">
+      <div class="blurred">
+        <slot name="content-blurred"></slot>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+// import Blurred from '@/components/blurred';
 export default {
   data() {
     return {
@@ -56,15 +62,34 @@ export default {
       }
       return false
     }
+  },
+  components: {
+    // Blurred
+  },
+  // mounted() {
+  //   this.box = this.$refs.wrapper;
+  //   this.box.addEventListener('scroll', () => {
+  //     // 在这里获得 scrollTop ，并设置变量
+  //     // this.style.setProperty("--scrollTop", -this.scrollTop);
+  //     this.style.setProperty("--translation", `translated3d(0,-${this.scrollTop}px,0)`);
+  //   })
+  // },
+  watch: {
+    'this.$refs.wrapper.scrollTop': newVal => {
+      this.style.setProperty("--translation", `translated3d(0,-${newVal}px,0)`);
+    }
   }
 }
 </script>
 <style scoped>
 .cp-nav {
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .cp-nav .model-router {
   flex: 0 0 20%;
@@ -92,18 +117,23 @@ export default {
   /* padding: 0 0.1rem; */
 }
 .cp-nav .model-router.router-link-active span {
-  color: var(--primary_color);
+  color: var(--icon_red);
 }
 /* .cp-nav .model-router.router-link-active .svg {
   background-color: var(--primary_color);
   /*  width: 30%; */
-  /* height: 0;
+/* height: 0;
   padding-top: 15%;
   padding-bottom: 15%;  */
 /* } */
 .cp-nav .model-router.router-link-active .svg-icon {
   fill: #fff;
-  background-color: var(--primary_color);
+  background-color: var(--icon_red);
   border-radius: 50%;
+}
+.cp-nav .content-blurred {
+  -webkit-transform: var(--translation);
+  -moz-transform: var(--translation);
+  transform: var(--translation);
 }
 </style>

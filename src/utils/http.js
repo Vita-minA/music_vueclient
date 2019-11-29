@@ -23,7 +23,6 @@ http.interceptors.request.use(function (config) {
 // 响应拦截
 http.interceptors.response.use(res => {
   // 如果成功就返回
-  console.log(res.data)
   if (res.data.code === 200) {
     return Promise.resolve(res)
   }

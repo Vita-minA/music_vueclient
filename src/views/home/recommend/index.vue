@@ -22,42 +22,49 @@
         <div class="vm-lists">
           <!-- 每日推荐 -->
           <router-link class="list-entry"
-                       to="/main/daily">
+                       to="/main/daily"
+                       tag="span">
             <!-- <img src="assets/images" alt=""> -->
             <span class="entry-name">每日推荐</span>
           </router-link>
           <router-link class="list-entry"
-                       to="/main/sheet">
+                       to="/main/sheet"
+                       tag="span">
             <svg-icon icon-class="sheet"></svg-icon>
             <span class="entry-name">歌单</span>
           </router-link>
           <router-link class="list-entry"
-                       to="/main/rank">
+                       to="/main/rank"
+                       tag="span">
             <svg-icon icon-class="rank"></svg-icon>
             <span class="entry-name">排行榜</span>
           </router-link>
           <router-link class="list-entry"
-                       to="/main/radio">
+                       to="/main/radio"
+                       tag="span">
             <svg-icon icon-class="radio"></svg-icon>
             <span class="entry-name">电台</span>
           </router-link>
           <router-link class="list-entry"
-                       to="/main/live">
+                       to="/main/live"
+                       tag="span">
             <svg-icon icon-class="live"></svg-icon>
             <span class="entry-name">直播</span>
           </router-link>
-          <!-- 推荐表单 -->
-
         </div>
+        <!-- 推荐表单 -->
+        <GroupSheet api="RECOMMEND_SHEET_LISTS"></GroupSheet>
       </div>
     </Scroll>
   </div>
 </template>
 <script>
 import Scroll from '@components/scroll'
+import GroupSheet from '@components/groupsheet'
 export default {
   components: {
-    Scroll
+    Scroll,
+    GroupSheet
   },
   data() {
     return {
@@ -151,12 +158,39 @@ export default {
   background: var(--primary_color);
 }
 .recommend .scroll-content .sider .main-sider .swiper-slide{
-  padding: 0.15rem;
+  padding: 0.35rem;
   box-sizing: border-box;
 }
 .recommend .scroll-content .sider .main-sider .swiper-slide img{
   display: block;
   width: 100%;
   border-radius: 0.2rem;
+}
+.recommend .scroll-content .vm-lists {
+  margin-top: 0.3rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.recommend .scroll-content .vm-lists .list-entry {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recommend .scroll-content .vm-lists .list-entry .svg-icon {
+  padding: 0.2rem;
+  fill: #fff;
+  height: 0.8rem;
+  width: 0.8rem;
+  background-color: var(--icon_red);
+  border-radius: 50%;
+}
+.recommend .scroll-content .vm-lists .list-entry span {
+  margin-top: 0.3rem;
+  line-height: 1;
+  color: var(--f_text_color);
+  font-family: monospace;
+  font-size: var(--f_auto_l);
 }
 </style>

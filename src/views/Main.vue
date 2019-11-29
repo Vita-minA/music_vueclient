@@ -6,7 +6,14 @@
     <router-link class="fix-music-btn icon-menu easy-click"
                  v-show="isPlayRouter"
                  to="/main/play"></router-link>
-    <Nav></Nav>
+    <Nav>
+      <!-- <div class="content-blurred"
+           slot="content-blurred">
+        <router-view v-if="$route.meta.keepAlive"
+                     class="model-view"
+                     :class="{'isFull': $route.meta.isFull}"></router-view>
+      </div> -->
+    </Nav>
     <!-- 切换走的动画效果 -->
     <transition :name="$route.meta.transition">
       <keep-alive>
