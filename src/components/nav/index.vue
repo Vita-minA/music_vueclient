@@ -87,9 +87,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-backdrop-filter: blur(15px);
+  /* ios模糊 */
+  position: absolute;
+  overflow: hidden;
+  background-color: #fff;
+
+  /* -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); */
 }
 .cp-nav .model-router {
   flex: 0 0 20%;
@@ -131,9 +136,18 @@ export default {
   background-color: var(--icon_red);
   border-radius: 50%;
 }
-.cp-nav .content-blurred {
-  -webkit-transform: var(--translation);
-  -moz-transform: var(--translation);
-  transform: var(--translation);
+.cp-nav .wrapper .blurred .content-blurred {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-filter: blur(10px);
+  filter: url(#blur-effect);
+  opacity: 1;
+  z-index: 1; 
+}
+.cp-nav .wrapper .blurred .content-blurred .fix-top {
+  opacity: 0;
 }
 </style>
