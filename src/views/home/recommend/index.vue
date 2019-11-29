@@ -24,7 +24,7 @@
           <router-link class="list-entry"
                        to="/main/daily"
                        tag="span">
-            <!-- <img src="assets/images" alt=""> -->
+                       <Calendar></Calendar>
             <span class="entry-name">每日推荐</span>
           </router-link>
           <router-link class="list-entry"
@@ -61,10 +61,12 @@
 <script>
 import Scroll from '@components/scroll'
 import GroupSheet from '@components/groupsheet'
+import Calendar from '@components/calendar'
 export default {
   components: {
     Scroll,
-    GroupSheet
+    GroupSheet,
+    Calendar
   },
   data() {
     return {
